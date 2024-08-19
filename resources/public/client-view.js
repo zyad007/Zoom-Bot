@@ -1,4 +1,4 @@
-var url = 'https://us05web.zoom.us/j/86789784755?pwd=ppVNY2DLfhD2AmX6I4TQ03wrxE8Bjb.1';
+var url = 'https://us05web.zoom.us/j/82306405084?pwd=Nsb7WNuYTXxdPjnWt5mFAwj3OzOkOE.1';
 var sdkKey = "c4C0zZAcTMW2kpfoF1S8uQ";
 var port = 3000
 var role = 0;

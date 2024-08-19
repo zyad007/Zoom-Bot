@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 
 const Home = () => {
   const [isFocused, setIsFocused] = useState(true)
-  const [isWaitingToJoin, setIsWaitingToJoin] = useState(true)
+  const [_isWaitingToJoin, _setIsWaitingToJoin] = useState(true)
 
   const [participants, setParticipants] = useState(0)
   const [unmuted, setUnmuted] = useState(0)
@@ -11,7 +11,7 @@ const Home = () => {
   useEffect(() => {
     console.log('init')
     window.electron.ipcRenderer.send('main')
-    window.electron.ipcRenderer.on('main', (event, data) => {
+    window.electron.ipcRenderer.on('main', (_event, data) => {
       if (data === 'BLUR') {
         setIsFocused(false)
       }

@@ -4,12 +4,11 @@ dotenv.config()
 
 import KJUR from "jsrsasign";
 
-import { getZoomAPIAccessToken, makeZoomAPIRequest } from "../api/zoomAPI";
+import { makeZoomAPIRequest } from "../api/zoomAPI";
 
-import { clickJoinMeetingButton } from "../helpers/meetingBot";
 
 /// TODO
-export const handleGetMeetingDetails = async (meetingNumber) => {
+export const handleGetMeetingDetails = async (_) => {
   return
 };
 
@@ -45,7 +44,7 @@ export const generateSDKSignature = asyncHandler(async (req: any, res: any) => {
 });
 
 // To Remove
-export const getMeetingDetails = asyncHandler(async (req, res: any) => {
+export const getMeetingDetails = asyncHandler(async (_, res: any) => {
   try {
     // Make a request to the Zoom API to get the meeting details and ZAK token
     // const meetingDetails =  await makeZoomAPIRequest("GET", "https://api.zoom.us/v2/users/me/token?type=zak")
@@ -57,7 +56,7 @@ export const getMeetingDetails = asyncHandler(async (req, res: any) => {
   }
 });
 
-export const getHostZAKToken = asyncHandler(async (req: any, res: any) => {
+export const getHostZAKToken = asyncHandler(async (_: any, res: any) => {
   try {
     const { token } = await makeZoomAPIRequest(
       "GET",

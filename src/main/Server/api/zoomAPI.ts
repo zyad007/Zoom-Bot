@@ -28,7 +28,7 @@ export const getZoomAPIAccessToken = async () => {
 console.log(getZoomAPIAccessToken());
 
 
-export const makeZoomAPIRequest = async (method, endpoint, data = null) => {
+export const makeZoomAPIRequest = async (method, endpoint, _ = null) => {
   try {
     const resp = await axios({
       method: method,

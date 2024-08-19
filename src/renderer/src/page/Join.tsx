@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import { useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 const Join = () => {
@@ -8,7 +8,7 @@ const Join = () => {
   const [error, setError] = useState('')
   const [isLoading, setIsloading] = useState(false); 
 
-  const handleSumbit = (e: any) => {
+  const handleSumbit = (_e: any) => {
     if (!meetingUrl) {
       setError("Input can't be empty")
       return

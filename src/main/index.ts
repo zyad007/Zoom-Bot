@@ -1,9 +1,9 @@
-import { app, shell, BrowserWindow, ipcMain, ipcRenderer } from 'electron'
-import path, { join } from 'path'
+import { app, shell, BrowserWindow, ipcMain } from 'electron'
+import { join } from 'path'
 import { electronApp, optimizer, is } from '@electron-toolkit/utils'
 import icon from '../../resources/icon.png?asset'
-import { exec, spawn } from 'child_process'
 import './Server/server'
+
 
 function createWindow(): void {
   // Create the browser window.
@@ -41,7 +41,7 @@ function createWindow(): void {
   }
 
   console.log('MAIN--');
-  ipcMain.on('main', async (event, arg) => {
+  ipcMain.on('main', async (event, _) => {
     console.log('MAIN');
 
     mainWindow.on('focus', () => {
@@ -54,7 +54,7 @@ function createWindow(): void {
     
   });
 
-  ipcMain.on('resize', (event, data) => {
+  ipcMain.on('resize', (_, _2) => {
     mainWindow.setSize(800, 250, true)
     mainWindow.center()
   })
