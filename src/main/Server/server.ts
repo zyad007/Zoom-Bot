@@ -47,7 +47,7 @@ app.use((_req, res, next) => {
 let page: Page
   ; (async () => {
     const browser = await puppeteer.launch({
-      headless: false,
+      headless: true,
       args: ['--use-fake-ui-for-media-stream'],
       defaultViewport: {
         width: 1200,
