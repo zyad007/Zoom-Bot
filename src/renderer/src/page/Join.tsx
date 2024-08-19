@@ -97,6 +97,11 @@ const Join = () => {
         />
       </div>
 
+      {
+        isLoading && 
+        <div className='mb-4 font-semibold'>Waiting for host to admit you...</div>
+      }
+
       <div className="mb-5">
         <button
           onClick={handleSumbit}
